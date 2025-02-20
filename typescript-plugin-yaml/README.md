@@ -1,0 +1,1 @@
+Copied from https://github.com/rickdgeerling/typescript-plugin-yaml/tree/feat/support-ts-v5; unfortunately upstream never merged the TS5 support and both the original and the fork contributing that are abandonware.  Both seem to be taking cues from typscript-plugin-css-modules as to how to support the code.

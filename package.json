@@ -1,4 +1,9 @@
 {
   "name": "typescript-plugin-repro",
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "dependencies": {
+    "typescript": "5.7",
+    "typescript-plugin-css-modules": "^5.1.0",
+    "typescript-plugin-yaml": "portal:typescript-plugin-yaml/"
+  }
 }

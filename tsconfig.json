@@ -1,0 +1,14 @@
+{
+  "compilerOptions": {
+    "plugins": [
+      // it appears that only the last plugin works properly
+      {
+        "name": "typescript-plugin-css-modules"
+      },
+      {
+        "name": "typescript-plugin-yaml"
+      },
+    ],
+    "moduleResolution": "node16"
+  }
+}
