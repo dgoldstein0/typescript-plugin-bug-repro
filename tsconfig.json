@@ -1,14 +1,16 @@
 {
   "compilerOptions": {
     "plugins": [
-      // it appears that only the last plugin works properly
+      // it appears that only the last plugin works properly.  So swapping the order
+      // can make css modules work at the expense of yaml
       {
         "name": "typescript-plugin-css-modules"
       },
       {
         "name": "typescript-plugin-yaml"
-      },
+      }
     ],
+    // I've tried multiple different moduleResolutions and all have the problem
     "moduleResolution": "node16"
   }
 }
