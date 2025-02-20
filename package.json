@@ -1,5 +1,5 @@
 {
-  "name": "typescript-plugin-repro",
+  "name": "typescript-plugin-bug-repro",
   "packageManager": "yarn@4.4.1",
   "dependencies": {
     "typescript": "5.7",

@@ -1,4 +1,4 @@
-# typescript-plugin-repro
+# typescript-plugin-bug-repro
 
 This repo exists to show a bug in the combination of tsserver, typescript-plugin-css-modules, and typescript-plugin-yaml.  The latter is taken from https://github.com/rickdgeerling/typescript-plugin-yaml/tree/feat/support-ts-v5; as there is no published copy with the TS 5.0 fix, I could use, I had to copy the compiled outputs into this repo.  Interestingly, that repo basically copies the approach of typescript-plugin-css-modules.
 

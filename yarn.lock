@@ -1495,6 +1495,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript-plugin-bug-repro@workspace:.":
+  version: 0.0.0-use.local
+  resolution: "typescript-plugin-bug-repro@workspace:."
+  dependencies:
+    typescript: "npm:5.7"
+    typescript-plugin-css-modules: "patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch"
+    typescript-plugin-yaml: "portal:typescript-plugin-yaml/"
+  languageName: unknown
+  linkType: soft
+
 "typescript-plugin-css-modules@npm:5.1.0":
   version: 5.1.0
   resolution: "typescript-plugin-css-modules@npm:5.1.0"
@@ -1547,19 +1557,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-plugin-repro@workspace:.":
+"typescript-plugin-yaml@portal:typescript-plugin-yaml/::locator=typescript-plugin-bug-repro%40workspace%3A.":
   version: 0.0.0-use.local
-  resolution: "typescript-plugin-repro@workspace:."
-  dependencies:
-    typescript: "npm:5.7"
-    typescript-plugin-css-modules: "patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch"
-    typescript-plugin-yaml: "portal:typescript-plugin-yaml/"
-  languageName: unknown
-  linkType: soft
-
-"typescript-plugin-yaml@portal:typescript-plugin-yaml/::locator=typescript-plugin-repro%40workspace%3A.":
-  version: 0.0.0-use.local
-  resolution: "typescript-plugin-yaml@portal:typescript-plugin-yaml/::locator=typescript-plugin-repro%40workspace%3A."
+  resolution: "typescript-plugin-yaml@portal:typescript-plugin-yaml/::locator=typescript-plugin-bug-repro%40workspace%3A."
   dependencies:
     js-yaml: "npm:^4.1.0"
   languageName: node
