@@ -1495,7 +1495,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript-plugin-css-modules@npm:^5.1.0":
+"typescript-plugin-css-modules@npm:5.1.0":
   version: 5.1.0
   resolution: "typescript-plugin-css-modules@npm:5.1.0"
   dependencies:
@@ -1521,12 +1521,38 @@ __metadata:
   languageName: node
   linkType: hard
 
+"typescript-plugin-css-modules@patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch":
+  version: 5.1.0
+  resolution: "typescript-plugin-css-modules@patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch::version=5.1.0&hash=4306ae"
+  dependencies:
+    "@types/postcss-modules-local-by-default": "npm:^4.0.2"
+    "@types/postcss-modules-scope": "npm:^3.0.4"
+    dotenv: "npm:^16.4.2"
+    icss-utils: "npm:^5.1.0"
+    less: "npm:^4.2.0"
+    lodash.camelcase: "npm:^4.3.0"
+    postcss: "npm:^8.4.35"
+    postcss-load-config: "npm:^3.1.4"
+    postcss-modules-extract-imports: "npm:^3.0.0"
+    postcss-modules-local-by-default: "npm:^4.0.4"
+    postcss-modules-scope: "npm:^3.1.1"
+    reserved-words: "npm:^0.1.2"
+    sass: "npm:^1.70.0"
+    source-map-js: "npm:^1.0.2"
+    stylus: "npm:^0.62.0"
+    tsconfig-paths: "npm:^4.2.0"
+  peerDependencies:
+    typescript: ">=4.0.0"
+  checksum: 10c0/80a5d3fabc3b226967e0d718b5cd9c3c4f14e984cd6215f9a7e7b184b8b75cbc191205d08f0a43794e458b42a01f36f1589e026fd9dc54ec60f7f0f39c19286b
+  languageName: node
+  linkType: hard
+
 "typescript-plugin-repro@workspace:.":
   version: 0.0.0-use.local
   resolution: "typescript-plugin-repro@workspace:."
   dependencies:
     typescript: "npm:5.7"
-    typescript-plugin-css-modules: "npm:^5.1.0"
+    typescript-plugin-css-modules: "patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch"
     typescript-plugin-yaml: "portal:typescript-plugin-yaml/"
   languageName: unknown
   linkType: soft

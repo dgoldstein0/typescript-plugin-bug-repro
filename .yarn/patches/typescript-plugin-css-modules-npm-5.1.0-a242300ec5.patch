@@ -1,0 +1,61 @@
+diff --git a/dist/index.js b/dist/index.js
+index 54e3c31da616899a3b5a0677cdb6c59419bbbf0f..321cb502996ad9b4f0aad06b826ed0a9563bf576 100644
+--- a/dist/index.js
++++ b/dist/index.js
+@@ -41,12 +41,20 @@ var init = function (_a) {
+         var logger = (0, logger_1.createLogger)(info);
+         var directory = info.project.getCurrentDirectory();
+         var compilerOptions = info.project.getCompilerOptions();
+-        var languageServiceHost = {};
++        var languageServiceHost = {brand: "typescript-plugin-css-modules"};
++        logger.log(`languageServiceHost.brand: ${info.languageServiceHost.brand}`);
+         var languageServiceHostProxy = new Proxy(info.languageServiceHost, {
+             get: function (target, key) {
+-                return languageServiceHost[key]
+-                    ? languageServiceHost[key]
+-                    : target[key];
++                if (languageServiceHost[key]) {
++
++                  logger.log(`looking for ${key}; found our version`);
++
++                  return languageServiceHost[key];
++                }else {
++                  logger.log(`looking for ${key}; found default version`);
++
++                    return target[key];
++                }
+             },
+         });
+         var languageService = ts.createLanguageService(languageServiceHostProxy);
+@@ -120,6 +128,7 @@ var init = function (_a) {
+         };
+         var createModuleResolver = function (containingFile) {
+             return function (moduleName, resolveModule) {
++                logger.log(`attempting to resolve ${moduleName}`);
+                 if (isRelativeCSS(moduleName)) {
+                     return {
+                         extension: ts.Extension.Dts,
+@@ -152,6 +161,7 @@ var init = function (_a) {
+                     var cssModulePath = normalizedLocations.find(function (location) {
+                         return fs_1.default.existsSync(location);
+                     });
++                    logger.log(`attempted to resolve ${moduleName} in ${containingFile}; failedLocations:\n\n${failedLocations.join(',')}\n\nnormalizedLocation:\n\n${normalizedLocations.join("\n")}\n\nFound ${cssModulePath}\n`);
+                     if (cssModulePath) {
+                         return {
+                             extension: ts.Extension.Dts,
+@@ -166,6 +176,7 @@ var init = function (_a) {
+         if (info.languageServiceHost.resolveModuleNameLiterals) {
+             var _resolveModuleNameLiterals_1 = info.languageServiceHost.resolveModuleNameLiterals.bind(info.languageServiceHost);
+             languageServiceHost.resolveModuleNameLiterals = function (moduleNames, containingFile) {
++                logger.log(`${this.brand} TS5 branch: attempting to resolve ${moduleNames} in $containingFile}`);
+                 var rest = [];
+                 for (var _i = 2; _i < arguments.length; _i++) {
+                     rest[_i - 2] = arguments[_i];
+@@ -192,6 +203,7 @@ var init = function (_a) {
+         else if (info.languageServiceHost.resolveModuleNames) {
+             var _resolveModuleNames_1 = info.languageServiceHost.resolveModuleNames.bind(info.languageServiceHost);
+             languageServiceHost.resolveModuleNames = function (moduleNames, containingFile) {
++                logger.log(`${this.brand} TS4 branch: attempting to resolve ${moduleNames} in $containingFile}`);
+                 var rest = [];
+                 for (var _i = 2; _i < arguments.length; _i++) {
+                     rest[_i - 2] = arguments[_i];

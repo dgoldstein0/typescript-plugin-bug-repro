@@ -3,7 +3,7 @@
   "packageManager": "yarn@4.4.1",
   "dependencies": {
     "typescript": "5.7",
-    "typescript-plugin-css-modules": "^5.1.0",
+    "typescript-plugin-css-modules": "patch:typescript-plugin-css-modules@npm%3A5.1.0#~/.yarn/patches/typescript-plugin-css-modules-npm-5.1.0-a242300ec5.patch",
     "typescript-plugin-yaml": "portal:typescript-plugin-yaml/"
   }
 }
